@@ -1,0 +1,173 @@
+:root {
+  --color-text: #2b312c;
+  --color-bg-current: #e4f0ed;
+  --color-bg-list: #f6f8fa;
+  --gradient-btn: linear-gradient(90deg, #04694b 0%, #11a87b 100%);
+
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+}
+
+html,
+body {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+}
+
+.rotator-container {
+  display: flex;
+  width: 665px;
+  padding: var(--space-32);
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--space-24);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 5px 42px rgba(33, 35, 37, 0.12);
+  margin: 40px auto;
+}
+
+/* ===== Блок 1 ===== */
+.rotator-current {
+  position: relative;
+  display: flex;
+  padding: 24px var(--space-16);
+  align-items: flex-start;
+  gap: var(--space-12);
+  align-self: stretch;
+  border-radius: 6px;
+  background: var(--color-bg-current);
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 0;
+}
+.icon-btn svg {
+  width: 20px;
+  height: 20px;
+}
+.icon-btn.small svg {
+  width: 16px;
+  height: 16px;
+}
+.rotator-current > .icon-btn {
+  top: 24px;
+  left: var(--space-16);
+}
+
+.rotator-text {
+  flex: 1 0 0;
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+}
+
+/* ===== Блок 2 ===== */
+.rotator-list {
+  display: flex;
+  height: 307px;
+  padding: var(--space-16);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  border-radius: 6px;
+  background: var(--color-bg-list);
+  overflow-y: auto;
+}
+.rotator-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.rotator-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.rotator-list li.removed .rotator-text {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+.removed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--sds-size-space-100);
+}
+.rotator-date {
+  margin-left: auto;
+  font-size: 12px;
+  color: #8a8f8b;
+}
+
+/* ===== Блок 3 / 4 ===== */
+.rotator-input-group {
+  display: flex;
+  gap: var(--space-16);
+  align-self: stretch;
+  width: 100%;
+}
+
+.rotator-input {
+  flex: 1 0 0;
+  padding: 20px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 23px;
+  letter-spacing: 0.14px;
+  color: var(--color-text);
+}
+
+.rotator-btn {
+  display: flex;
+  width: 183px;
+  padding: 15px 12px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  background: var(--gradient-btn);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.1;
+  cursor: pointer;
+}
+.rotator-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-slot {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* минимальный адаптив */
+@media (max-width: 700px) {
+  .rotator-container {
+    width: 100%;
+    padding: var(--space-24) var(--space-16);
+    box-shadow: none;
+    margin: 0;
+  }
+  .rotator-btn {
+    width: 120px;
+  }
+}
