@@ -17,14 +17,6 @@ function remove(id: string) {
   if (currentMessage.value?.id === id) currentMessage.value = store.next();
 }
 
-function formatDate(date: Date) {
-  return new Intl.DateTimeFormat("ru-RU", {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-  }).format(date);
-}
-
 let timer: number;
 
 onMounted(() => {
